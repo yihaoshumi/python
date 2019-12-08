@@ -1,0 +1,10 @@
+mport requests
+from bs4 import BeautifulSoup
+import lxml
+luobo1=requests.get("http://www.csrc.gov.cn/pub/zjhpublic/G00306212/201911/t20191125_366490.htm")
+soup=BeautifulSoup(luobo1.content,"lxml")
+luobo=soup.find_all("div",class_="contentss")
+for l in luobo[0:]:
+    l=l.get_text()
+    print(soup.title.text)
+    print(l)
